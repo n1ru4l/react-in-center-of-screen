@@ -1,4 +1,4 @@
-### react-in-center
+### @n1ru4l/react-in-center-of-screen
 
 Utility Components for determining whether elements are in the center of the screen.
 
@@ -16,7 +16,7 @@ Designed for `react-native`, but also compatible to browser environments.
 
 ### Install
 
-`yarn add -E react-in-center-of-screen`
+`yarn add -E @n1ru4l/react-in-center-of-screen`
 
 ## Usage Example
 
