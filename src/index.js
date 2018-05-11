@@ -110,7 +110,7 @@ export class InCenterConsumer extends Component<ConsumerProps> {
                 centerYStart,
                 centerYEnd
               } = value;
-              const muliplier = Math.floor(index / columnsPerRow) + 5;
+              const muliplier = Math.floor(index / columnsPerRow) + 0.5;
               const offsetTop = listItemHeight * muliplier;
               const positionRelativeToViewport = offsetTop - offsetY;
               const isInCenter =
