@@ -1,4 +1,4 @@
-### @n1ru4l/react-in-center-of-screen
+# @n1ru4l/react-in-center-of-screen
 
 Utility Components for determining whether elements are in the center of the screen.
 
@@ -78,3 +78,24 @@ export class MyComponent extends Component<any, MyComponentState> {
 ```
 
 ## API
+
+### `<OffsetYProvider {...OffsetYProviderProps}>{() => React.Node}</OffsetYProvider>`
+
+#### OffsetYProviderProps
+
+* `columnsPerRow` (number): Colums per row
+* `listItemHeight` (number): Height of a single list item
+* `centerYStart` (number): y coordinate of the start of the center
+* `centerYEnd` (number): y coordinate of the end of the center
+
+### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
+
+#### IndexProviderProps
+
+* `index` (number): index of the list item
+
+### `<InCenterConsumer>{({data: InCenterConsumerData}) => React.Node}</InCenterConsumer>`
+
+#### InCenterConsumerData
+
+* `isInCenter` (boolean): A value that indicates whether the list item is located in the defined center
