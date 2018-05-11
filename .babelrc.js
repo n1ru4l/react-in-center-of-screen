@@ -9,10 +9,7 @@ module.exports = {
           node: "8"
         },
         loose: true,
-        modules:
-          process.env.NODE_ENV === "test" || process.env.NODE_ENV === "build"
-            ? undefined
-            : false
+        modules: process.env.NODE_ENV === "test" ? undefined : false
       }
     ]
   ],
