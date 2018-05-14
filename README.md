@@ -87,6 +87,7 @@ export class MyComponent extends Component<any, MyComponentState> {
 * `listItemHeight` (number): Height of a single list item
 * `centerYStart` (number): y coordinate of the start of the center
 * `centerYEnd` (number): y coordinate of the end of the center
+* `debounce` (?number): time in milliseconds before a centerY update is propagated
 
 ### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
 
