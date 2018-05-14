@@ -1,6 +1,7 @@
 //@flow
 import React, { Component, type Node } from "react";
 import createContext, { type Context } from "create-react-context";
+import debounce from "lodash.debounce";
 
 const OffsetYContext: Context<{
   offsetY: number,
@@ -27,11 +28,13 @@ export type OffsetYProviderProps = {
   listItemHeight: number,
   columnsPerRow: number,
   centerYStart: number,
-  centerYEnd: number
+  centerYEnd: number,
+  debounce?: number
 };
 
 type OffsetYProviderState = {
-  offsetY: number
+  offsetY: number,
+  setOffsetY: (offsetY: number) => void
 };
 
 export class OffsetYProvider extends Component<
@@ -40,14 +43,19 @@ export class OffsetYProvider extends Component<
 > {
   constructor(props: any) {
     super(props);
+    let setOffsetY = offsetY => this.setState({ offsetY });
+    if (this.props.debounce) {
+      setOffsetY = debounce(setOffsetY, this.props.debounce);
+    }
     this.state = {
-      offsetY: 0
+      offsetY: 0,
+      setOffsetY
     };
   }
 
   render() {
     const {
-      state: { offsetY },
+      state: { offsetY, setOffsetY },
       props: {
         children,
         listItemHeight,
@@ -66,7 +74,7 @@ export class OffsetYProvider extends Component<
           centerYEnd
         }}
       >
-        {children({ setOffsetY: offsetY => this.setState({ offsetY }) })}
+        {children({ setOffsetY })}
       </OffsetYContext.Provider>
     );
   }

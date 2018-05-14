@@ -39,6 +39,7 @@
     "flow-typed": "2.4.0",
     "jest": "22.4.3",
     "lint-staged": "7.1.0",
+    "lolex": "2.5.0",
     "prettier": "1.12.1",
     "prettier-check": "2.0.0",
     "prop-types": "15.6.1",
@@ -50,6 +51,7 @@
     "rollup-plugin-babel": "4.0.0-beta.4"
   },
   "dependencies": {
-    "create-react-context": "0.2.2"
+    "create-react-context": "0.2.2",
+    "lodash.debounce": "4.0.8"
   }
 }
