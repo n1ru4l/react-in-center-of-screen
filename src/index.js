@@ -1,7 +1,7 @@
 //@flow
 import React, { Component, type Node } from "react";
 import createContext, { type Context } from "create-react-context";
-import debounce from "lodash.debounce";
+import throttle from "lodash.throttle";
 
 const OffsetYContext: Context<{
   offsetY: number,
@@ -29,7 +29,7 @@ export type OffsetYProviderProps = {
   columnsPerRow: number,
   centerYStart: number,
   centerYEnd: number,
-  debounce?: number
+  throttle?: number
 };
 
 type OffsetYProviderState = {
@@ -44,8 +44,8 @@ export class OffsetYProvider extends Component<
   constructor(props: any) {
     super(props);
     let setOffsetY = offsetY => this.setState({ offsetY });
-    if (this.props.debounce) {
-      setOffsetY = debounce(setOffsetY, this.props.debounce);
+    if (this.props.throttle) {
+      setOffsetY = throttle(setOffsetY, this.props.throttle);
     }
     this.state = {
       offsetY: 0,
