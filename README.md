@@ -60,13 +60,15 @@ export class MyComponent extends Component<any, MyComponentState> {
             keyExtractor={keyExtractor}
             renderItem={({ index, item }) => (
               <IndexProvider index={index}>
-                <View style={{ height: boxHeight, backgroundColor: item }}>
-                  <InCenterConsumer>
-                    {({ isInCenter }) =>
-                      isInCenter ? <Text>I am in the center</Text> : null
-                    }
-                  </InCenterConsumer>
-                </View>
+                {() => (
+                  <View style={{ height: boxHeight, backgroundColor: item }}>
+                    <InCenterConsumer>
+                      {({ isInCenter }) =>
+                        isInCenter ? <Text>I am in the center</Text> : null
+                      }
+                    </InCenterConsumer>
+                  </View>
+                )}
               </IndexProvider>
             )}
           />
