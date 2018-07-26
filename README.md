@@ -90,6 +90,8 @@ export class MyComponent extends Component<any, MyComponentState> {
 * `centerYStart` (number): y coordinate of the start of the center
 * `centerYEnd` (number): y coordinate of the end of the center
 * `debounce` (?number): time in milliseconds before a centerY update is propagated
+* `listItemLowerBound` (?number): lowerBound for visible area (defaults to `listItemHeight` / 2)
+* `listItemUpperBound` (?number): upperBound for visible area (defaults to `listItemHeight` / 2)
 
 ### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
 
