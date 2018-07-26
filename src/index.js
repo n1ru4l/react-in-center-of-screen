@@ -8,13 +8,17 @@ const OffsetYContext: Context<{
   listItemHeight: number,
   columnsPerRow: number,
   centerYStart: number,
-  centerYEnd: number
+  centerYEnd: number,
+  listItemLowerBound?: number,
+  listItemUpperBound?: number
 }> = createContext({
   offsetY: 0,
   listItemHeight: 0,
   columnsPerRow: 1,
   centerYStart: 0,
-  centerYEnd: 0
+  centerYEnd: 0,
+  listItemLowerBound: 0,
+  listItemUpperBound: 0
 });
 
 const IndexContext: Context<number> = createContext(0);
@@ -29,7 +33,9 @@ export type OffsetYProviderProps = {
   columnsPerRow: number,
   centerYStart: number,
   centerYEnd: number,
-  throttle?: number
+  throttle?: number,
+  listItemLowerBound?: number,
+  listItemUpperBound?: number
 };
 
 type OffsetYProviderState = {
@@ -116,14 +122,28 @@ export class InCenterConsumer extends Component<ConsumerProps> {
                 listItemHeight,
                 columnsPerRow = 1,
                 centerYStart,
-                centerYEnd
+                centerYEnd,
+                listItemLowerBound = listItemHeight / 2,
+                listItemUpperBound = listItemHeight / 2
               } = value;
-              const muliplier = Math.floor(index / columnsPerRow) + 0.5;
+
+              let isInCenter = false;
+              const muliplier = Math.floor(index / columnsPerRow);
               const offsetTop = listItemHeight * muliplier;
               const positionRelativeToViewport = offsetTop - offsetY;
-              const isInCenter =
-                positionRelativeToViewport >= centerYStart &&
-                positionRelativeToViewport <= centerYEnd;
+
+              const itemLowerY =
+                positionRelativeToViewport + listItemLowerBound;
+
+              const itemUpperY =
+                positionRelativeToViewport + listItemUpperBound;
+
+              if (
+                (itemLowerY >= centerYStart || itemUpperY >= centerYStart) &&
+                (itemLowerY <= centerYEnd || itemUpperY <= centerYEnd)
+              ) {
+                isInCenter = true;
+              }
               return children({ isInCenter });
             }}
           </IndexContext.Consumer>
