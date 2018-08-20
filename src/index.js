@@ -11,7 +11,8 @@ const OffsetYContext: Context<{
   centerYEnd: number,
   listItemLowerBound: number,
   listItemUpperBound: number,
-  initialOffset: number
+  initialOffset: number,
+  contentOffset: number
 }> = createContext({
   offsetY: undefined,
   listItemHeight: 0,
@@ -20,7 +21,8 @@ const OffsetYContext: Context<{
   centerYEnd: 0,
   listItemLowerBound: 0,
   listItemUpperBound: 0,
-  initialOffset: 0
+  initialOffset: 0,
+  contentOffset: 0
 });
 
 const IndexContext: Context<number> = createContext(0);
@@ -38,7 +40,8 @@ export type OffsetYProviderProps = {
   throttle?: number,
   listItemLowerBound?: number,
   listItemUpperBound?: number,
-  initialOffset?: number
+  initialOffset?: number,
+  contentOffset?: number
 };
 
 type SetOffsetYFunction = (offsetY: number) => void;
@@ -78,7 +81,8 @@ export class OffsetYProvider extends Component<
         centerYEnd,
         initialOffset = 0,
         listItemLowerBound = listItemHeight / 2,
-        listItemUpperBound = listItemHeight / 2
+        listItemUpperBound = listItemHeight / 2,
+        contentOffset = 0
       }
     } = this;
     return (
@@ -91,7 +95,8 @@ export class OffsetYProvider extends Component<
           centerYEnd,
           listItemLowerBound,
           listItemUpperBound,
-          initialOffset
+          initialOffset,
+          contentOffset
         }}
       >
         {children({ setOffsetY })}

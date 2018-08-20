@@ -93,6 +93,7 @@ export class MyComponent extends Component<any, MyComponentState> {
 * `listItemLowerBound` (?number): lowerBound for visible area (defaults to `listItemHeight` / 2)
 * `listItemUpperBound` (?number): upperBound for visible area (defaults to `listItemHeight` / 2)
 * `initialOffset` (?number): initial content offset
+* `contentOffset` (?number): offset of the list items (e.g. the height of a list header)
 
 ### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
 

@@ -2,6 +2,7 @@
 
 * add option for setting initial offset ([`1e89e21`])(https://github.com/n1ru4l/react-in-center-of-screen/commit/087caa3f3b3025df2e34bb4c31990ac44044500e)
 * fix setting options `listItemLowerBound` and `listItemUpperBound`
+* add option for setting the `contentOffset`
 
 # 1.0.0-alpha.1
 
