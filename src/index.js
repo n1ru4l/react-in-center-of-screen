@@ -9,8 +9,8 @@ const OffsetYContext: Context<{
   columnsPerRow: number,
   centerYStart: number,
   centerYEnd: number,
-  listItemLowerBound?: number,
-  listItemUpperBound?: number,
+  listItemLowerBound: number,
+  listItemUpperBound: number,
   initialOffset: number
 }> = createContext({
   offsetY: undefined,
@@ -76,7 +76,9 @@ export class OffsetYProvider extends Component<
         columnsPerRow,
         centerYStart,
         centerYEnd,
-        initialOffset = 0
+        initialOffset = 0,
+        listItemLowerBound = listItemHeight / 2,
+        listItemUpperBound = listItemHeight / 2
       }
     } = this;
     return (
@@ -87,6 +89,8 @@ export class OffsetYProvider extends Component<
           columnsPerRow,
           centerYStart,
           centerYEnd,
+          listItemLowerBound,
+          listItemUpperBound,
           initialOffset
         }}
       >
@@ -134,8 +138,8 @@ export class InCenterConsumer extends Component<ConsumerProps> {
                 columnsPerRow = 1,
                 centerYStart,
                 centerYEnd,
-                listItemLowerBound = listItemHeight / 2,
-                listItemUpperBound = listItemHeight / 2
+                listItemLowerBound,
+                listItemUpperBound
               } = value;
 
               let isInCenter = false;

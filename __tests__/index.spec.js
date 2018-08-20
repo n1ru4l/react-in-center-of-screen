@@ -102,3 +102,50 @@ test("it can handle initialOffset", async done => {
   unmount();
   done();
 });
+
+test("it supports listItemLowerBound/listItemUpperBound", async done => {
+  let _setOffsetY = null;
+
+  // we have a header with a height of 100
+  const { unmount, getByText } = render(
+    <OffsetYProvider
+      centerYStart={100}
+      centerYEnd={200}
+      columnsPerRow={1}
+      listItemHeight={100}
+      listItemLowerBound={0}
+      listItemUpperBound={100}
+    >
+      {({ setOffsetY }) => {
+        _setOffsetY = setOffsetY;
+        return (
+          <IndexProvider index={3}>
+            {() => (
+              <InCenterConsumer>
+                {({ isInCenter }) =>
+                  isInCenter ? <div>is in center</div> : <div>ayyy</div>
+                }
+              </InCenterConsumer>
+            )}
+          </IndexProvider>
+        );
+      }}
+    </OffsetYProvider>
+  );
+
+  getByText("ayyy");
+
+  //$FlowFixMe
+  _setOffsetY = (_setOffsetY: (value: number) => void);
+
+  _setOffsetY(100);
+  getByText("is in center");
+
+  _setOffsetY(300);
+  getByText("is in center");
+  _setOffsetY(301);
+  getByText("ayyy");
+
+  unmount();
+  done();
+});
