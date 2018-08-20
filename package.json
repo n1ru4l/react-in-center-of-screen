@@ -15,6 +15,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "jest",
+    "prepublish": "yarn build",
     "build": "rimraf lib && babel src --no-babelrc --out-dir lib --copy-files --presets=@babel/preset-react --plugins=@babel/plugin-transform-flow-strip-types && cpy ./src/index.js ./lib --rename=index.js.flow && rollup -c",
     "lint": "eslint --ignore-pattern .gitignore **/*.js",
     "prettier-check": "prettier-check --ignore-path .gitignore '**/*.{js,md,json}'",
