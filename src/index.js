@@ -1,9 +1,8 @@
 //@flow
 import React, { Component, type Node } from "react";
-import createContext, { type Context } from "create-react-context";
 import throttle from "lodash.throttle";
 
-const OffsetYContext: Context<{
+export type OffsetYContextType = {
   offsetY?: number,
   listItemHeight: number,
   columnsPerRow: number,
@@ -13,7 +12,9 @@ const OffsetYContext: Context<{
   listItemUpperBound: number,
   initialOffset: number,
   contentOffset: number
-}> = createContext({
+};
+
+const OffsetYContext = React.createContext<OffsetYContextType>({
   offsetY: undefined,
   listItemHeight: 0,
   columnsPerRow: 1,
@@ -25,7 +26,9 @@ const OffsetYContext: Context<{
   contentOffset: 0
 });
 
-const IndexContext: Context<number> = createContext(0);
+export type IndexContextType = number;
+
+const IndexContext = React.createContext<IndexContextType>(0);
 
 export type OffsetYProviderFaCCOptions = {
   setOffsetY: (offsetY: number) => void

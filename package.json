@@ -17,7 +17,7 @@
     "test": "jest",
     "prepublish": "yarn build",
     "build": "rimraf lib && babel src --no-babelrc --out-dir lib --copy-files --presets=@babel/preset-react --plugins=@babel/plugin-transform-flow-strip-types && cpy ./src/index.js ./lib --rename=index.js.flow && rollup -c",
-    "lint": "eslint --ignore-pattern .gitignore **/*.js",
+    "lint": "eslint --ignore-path .gitignore **/*.js",
     "prettier-check": "prettier-check --ignore-path .gitignore '**/*.{js,md,json}'",
     "prettier-fix": "prettier --ignore-path .gitignore --write '**/*.{js,md,json}'"
   },
@@ -32,20 +32,20 @@
     "babel-eslint": "8.2.3",
     "babel-jest": "22.4.3",
     "cpy-cli": "1.0.1",
-    "eslint": "4.19.1",
+    "eslint": "5.4.0",
     "eslint-config-prettier": "2.9.0",
-    "eslint-plugin-flowtype": "2.46.3",
-    "eslint-plugin-jest": "21.15.1",
-    "eslint-plugin-react": "7.7.0",
-    "flow-bin": "0.72.0",
+    "eslint-plugin-flowtype": "2.50.0",
+    "eslint-plugin-jest": "21.21.0",
+    "eslint-plugin-react": "7.11.1",
+    "flow-bin": "0.79.1",
     "flow-typed": "2.4.0",
     "jest": "22.4.3",
     "lint-staged": "7.1.0",
     "lolex": "2.5.0",
-    "prettier": "1.12.1",
+    "prettier": "1.14.2",
     "prettier-check": "2.0.0",
     "prop-types": "15.6.1",
-    "react": "16.3.2",
+    "react": "16.4.2",
     "react-dom": "16.3.2",
     "react-testing-library": "3.0.2",
     "rimraf": "2.6.2",
@@ -53,7 +53,9 @@
     "rollup-plugin-babel": "4.0.0-beta.4"
   },
   "dependencies": {
-    "create-react-context": "0.2.2",
     "lodash.throttle": "4.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1"
   }
 }
