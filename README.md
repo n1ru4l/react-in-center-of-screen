@@ -1,6 +1,5 @@
 # @n1ru4l/react-in-center-of-screen
 
-
 [![NpmVersion](https://img.shields.io/npm/v/@n1ru4l/react-in-center-of-screen.svg)](https://www.npmjs.com/package/@n1ru4l/react-in-center-of-screen)
 [![npm](https://img.shields.io/npm/dt/@n1ru4l/react-in-center-of-screen.svg)](https://www.npmjs.com/package/@n1ru4l/react-in-center-of-screen)
 [![CircleCI](https://circleci.com/gh/n1ru4l/react-in-center-of-screen.svg?style=shield)](https://circleci.com/gh/n1ru4l/react-in-center-of-screen)
@@ -14,13 +13,13 @@ Designed for `react-native`, but also compatible to browser environments.
 
 **Features**
 
-* Determine which list items are in the center of the viewport
-* Multiple list items per column
+- Determine which list items are in the center of the viewport
+- Multiple list items per column
 
 **Restrictions:**
 
-* All list items must have the same height
-* Only supports vertical lists
+- All list items must have the same height
+- Only supports vertical lists
 
 ### Install
 
@@ -32,7 +31,11 @@ Designed for `react-native`, but also compatible to browser environments.
 //@flow
 import React, { Component } from "react";
 import { Dimensions, FlatList, View, Text } from "react-native";
-import { OffsetYProvider, IndexProvider, InCenterConsumer } from "@n1ru4l/react-in-center-of-screen";
+import {
+  OffsetYProvider,
+  IndexProvider,
+  InCenterConsumer
+} from "@n1ru4l/react-in-center-of-screen";
 
 const { height: windowHeight } = Dimensions.get("window");
 
@@ -56,8 +59,8 @@ export class MyComponent extends Component<any, MyComponentState> {
       <OffsetYProvider
         columnsPerRow={1}
         listItemHeight={boxHeight}
-        centerYStart={windowHeight * 1 / 3}
-        centerYEnd={windowHeight * 2 / 3}
+        centerYStart={(windowHeight * 1) / 3}
+        centerYEnd={(windowHeight * 2) / 3}
       >
         {({ setOffsetY }) => (
           <FlatList
@@ -93,24 +96,24 @@ export class MyComponent extends Component<any, MyComponentState> {
 
 #### OffsetYProviderProps
 
-* `columnsPerRow` (number): Colums per row
-* `listItemHeight` (number): Height of a single list item
-* `centerYStart` (number): y coordinate of the start of the center
-* `centerYEnd` (number): y coordinate of the end of the center
-* `debounce` (?number): time in milliseconds before a centerY update is propagated
-* `listItemLowerBound` (?number): lowerBound for visible area (defaults to `listItemHeight` / 2)
-* `listItemUpperBound` (?number): upperBound for visible area (defaults to `listItemHeight` / 2)
-* `initialOffset` (?number): initial content offset
-* `contentOffset` (?number): offset of the list items (e.g. the height of a list header)
+- `columnsPerRow` (number): Colums per row
+- `listItemHeight` (number): Height of a single list item
+- `centerYStart` (number): y coordinate of the start of the center
+- `centerYEnd` (number): y coordinate of the end of the center
+- `createInvokeFunction` ((invoke: () => void) => { invoke: () => void, cancel: () => void}): implement your own invoke function for throttling or debouncing
+- `listItemLowerBound` (?number): lowerBound for visible area (defaults to `listItemHeight` / 2)
+- `listItemUpperBound` (?number): upperBound for visible area (defaults to `listItemHeight` / 2)
+- `initialOffset` (?number): initial content offset
+- `contentOffset` (?number): offset of the list items (e.g. the height of a list header)
 
 ### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
 
 #### IndexProviderProps
 
-* `index` (number): index of the list item
+- `index` (number): index of the list item
 
 ### `<InCenterConsumer>{({data: InCenterConsumerData}) => React.Node}</InCenterConsumer>`
 
 #### InCenterConsumerData
 
-* `isInCenter` (boolean): A value that indicates whether the list item is located in the defined center
+- `isInCenter` (boolean): A value that indicates whether the list item is located in the defined center

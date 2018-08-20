@@ -1,6 +1,5 @@
 //@flow
 import React, { Component, type Node } from "react";
-import throttle from "lodash.throttle";
 
 export type OffsetYContextType = {
   offsetY?: number,
@@ -34,13 +33,20 @@ export type OffsetYProviderFaCCOptions = {
   setOffsetY: (offsetY: number) => void
 };
 
+export type InvokeFunctionType = (
+  invoke: () => void
+) => {
+  invoke: () => void,
+  cancel: () => void
+};
+
 export type OffsetYProviderProps = {
   children: (opts: OffsetYProviderFaCCOptions) => Node,
   listItemHeight: number,
   columnsPerRow: number,
   centerYStart: number,
   centerYEnd: number,
-  throttle?: number,
+  createInvokeFunction?: InvokeFunctionType,
   listItemLowerBound?: number,
   listItemUpperBound?: number,
   initialOffset?: number,
@@ -60,17 +66,32 @@ export class OffsetYProvider extends Component<
 > {
   constructor(props: any) {
     super(props);
-    let setOffsetY = offsetY => this.setState({ offsetY });
-    if (this.props.throttle) {
-      setOffsetY = (throttle(
-        setOffsetY,
-        this.props.throttle
-      ): SetOffsetYFunction);
+    this._setOffsetY = (offsetY: number) => this.setState({ offsetY });
+
+    this._invoke = {
+      invoke: this._setOffsetY,
+      cancel: () => undefined
+    };
+    let setOffsetY = this._setOffsetY;
+
+    if (this.props.createInvokeFunction) {
+      this._invoke = this.props.createInvokeFunction(setOffsetY);
     }
+
     this.state = {
       offsetY: undefined,
-      setOffsetY
+      setOffsetY: (offsetY: number) => this._invoke.invoke(offsetY)
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.createInvokeFunction !== prevProps.createInvokeFunction) {
+      this._invoke = this.props.createInvokeFunction(this._setOffsetY);
+    }
+  }
+
+  componentWillUnmount() {
+    this._invoke.cancel();
   }
 
   render() {
