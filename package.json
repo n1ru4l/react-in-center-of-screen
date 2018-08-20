@@ -1,6 +1,6 @@
 {
   "name": "@n1ru4l/react-in-center-of-screen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Utility components for checking if content is in the center of the viewport",
   "author": "Laurin Quast <laurinquast@googlemail.com>",
   "license": "MIT",
