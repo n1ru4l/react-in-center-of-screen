@@ -1770,9 +1770,9 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-dom-testing-library@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-2.2.0.tgz#f9affe83a3566a80af7e01db4f329d65ccf93418"
+dom-testing-library@^2.3.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-2.9.1.tgz#813eff283b2fd97649b1382817636547329b2409"
   dependencies:
     jest-dom "^1.0.0"
     mutationobserver-shim "^0.3.2"
@@ -4440,11 +4440,11 @@ react-dom@16.4.2:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-testing-library@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-3.0.2.tgz#03ffe4b8c1b408e7c010ce910a63edefbe843f28"
+react-testing-library@3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-3.1.7.tgz#c5ce14483ef91c1ad611f074ff646b29952dd1ba"
   dependencies:
-    dom-testing-library "^2.0.0"
+    dom-testing-library "^2.3.1"
     wait-for-expect "^0.5.0"
 
 react@16.4.2:
