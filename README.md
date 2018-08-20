@@ -1,5 +1,13 @@
 # @n1ru4l/react-in-center-of-screen
 
+
+[![NpmVersion](https://img.shields.io/npm/v/@n1ru4l/react-in-center-of-screen.svg)](https://www.npmjs.com/package/@n1ru4l/react-in-center-of-screen)
+[![npm](https://img.shields.io/npm/dt/@n1ru4l/react-in-center-of-screen.svg)](https://www.npmjs.com/package/@n1ru4l/react-in-center-of-screen)
+[![CircleCI](https://circleci.com/gh/n1ru4l/react-in-center-of-screen.svg?style=shield)](https://circleci.com/gh/n1ru4l/react-in-center-of-screen)
+![Dependency Status](https://david-dm.org/n1ru4l/react-in-center-of-screen/status.svg)
+![Development Dependency Status](https://david-dm.org/n1ru4l/react-in-center-of-screen/dev-status.svg)
+![Peer Dependency Status](https://david-dm.org/n1ru4l/react-in-center-of-screen/peer-status.svg)
+
 Utility Components for determining whether elements are in the center of the screen.
 
 Designed for `react-native`, but also compatible to browser environments.
