@@ -4,21 +4,23 @@ import createContext, { type Context } from "create-react-context";
 import throttle from "lodash.throttle";
 
 const OffsetYContext: Context<{
-  offsetY: number,
+  offsetY?: number,
   listItemHeight: number,
   columnsPerRow: number,
   centerYStart: number,
   centerYEnd: number,
   listItemLowerBound?: number,
-  listItemUpperBound?: number
+  listItemUpperBound?: number,
+  initialOffset: number
 }> = createContext({
-  offsetY: 0,
+  offsetY: undefined,
   listItemHeight: 0,
   columnsPerRow: 1,
   centerYStart: 0,
   centerYEnd: 0,
   listItemLowerBound: 0,
-  listItemUpperBound: 0
+  listItemUpperBound: 0,
+  initialOffset: 0
 });
 
 const IndexContext: Context<number> = createContext(0);
@@ -35,12 +37,15 @@ export type OffsetYProviderProps = {
   centerYEnd: number,
   throttle?: number,
   listItemLowerBound?: number,
-  listItemUpperBound?: number
+  listItemUpperBound?: number,
+  initialOffset?: number
 };
 
+type SetOffsetYFunction = (offsetY: number) => void;
+
 type OffsetYProviderState = {
-  offsetY: number,
-  setOffsetY: (offsetY: number) => void
+  offsetY?: number,
+  setOffsetY: SetOffsetYFunction
 };
 
 export class OffsetYProvider extends Component<
@@ -51,10 +56,13 @@ export class OffsetYProvider extends Component<
     super(props);
     let setOffsetY = offsetY => this.setState({ offsetY });
     if (this.props.throttle) {
-      setOffsetY = throttle(setOffsetY, this.props.throttle);
+      setOffsetY = (throttle(
+        setOffsetY,
+        this.props.throttle
+      ): SetOffsetYFunction);
     }
     this.state = {
-      offsetY: 0,
+      offsetY: undefined,
       setOffsetY
     };
   }
@@ -67,7 +75,8 @@ export class OffsetYProvider extends Component<
         listItemHeight,
         columnsPerRow,
         centerYStart,
-        centerYEnd
+        centerYEnd,
+        initialOffset = 0
       }
     } = this;
     return (
@@ -77,7 +86,8 @@ export class OffsetYProvider extends Component<
           listItemHeight,
           columnsPerRow,
           centerYStart,
-          centerYEnd
+          centerYEnd,
+          initialOffset
         }}
       >
         {children({ setOffsetY })}
@@ -117,8 +127,9 @@ export class InCenterConsumer extends Component<ConsumerProps> {
         {value => (
           <IndexContext.Consumer>
             {index => {
-              const {
-                offsetY,
+              let {
+                initialOffset,
+                offsetY = initialOffset,
                 listItemHeight,
                 columnsPerRow = 1,
                 centerYStart,
