@@ -92,6 +92,7 @@ export class MyComponent extends Component<any, MyComponentState> {
 * `debounce` (?number): time in milliseconds before a centerY update is propagated
 * `listItemLowerBound` (?number): lowerBound for visible area (defaults to `listItemHeight` / 2)
 * `listItemUpperBound` (?number): upperBound for visible area (defaults to `listItemHeight` / 2)
+* `initialOffset` (?number): initial content offset
 
 ### `<IndexProvider {...IndexProviderProps}>{() => React.Node}</IndexProvider>`
 
