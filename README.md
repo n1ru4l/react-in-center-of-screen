@@ -24,7 +24,7 @@ Designed for `react-native`, but also compatible to browser environments.
 //@flow
 import React, { Component } from "react";
 import { Dimensions, FlatList, View, Text } from "react-native";
-import { OffsetYProvider, IndexProvider, InCenterConsumer } from "./../src";
+import { OffsetYProvider, IndexProvider, InCenterConsumer } from "@n1ru4l/react-in-center-of-screen";
 
 const { height: windowHeight } = Dimensions.get("window");
 
