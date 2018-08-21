@@ -35,3 +35,6 @@ jobs:
 
       # run tests!
       - run: yarn test
+      - run: yarn flow
+      - run: yarn lint
+      - run: yarn prettier-check
