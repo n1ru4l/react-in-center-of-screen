@@ -29,16 +29,20 @@ export type IndexContextType = number;
 
 const IndexContext = React.createContext<IndexContextType>(0);
 
+type SetOffsetYFunction = (offsetY: number) => void;
+
 export type OffsetYProviderFaCCOptions = {
   setOffsetY: (offsetY: number) => void
 };
 
-export type InvokeFunctionType = (
-  invoke: () => void
-) => {
-  invoke: () => void,
+export type InvokeResultType = {
+  invoke: (offsetY: number) => void,
   cancel: () => void
 };
+
+export type InvokeFunctionType = (
+  invoke: SetOffsetYFunction
+) => InvokeResultType;
 
 export type OffsetYProviderProps = {
   children: (opts: OffsetYProviderFaCCOptions) => Node,
@@ -53,8 +57,6 @@ export type OffsetYProviderProps = {
   contentOffset?: number
 };
 
-type SetOffsetYFunction = (offsetY: number) => void;
-
 type OffsetYProviderState = {
   offsetY?: number,
   setOffsetY: SetOffsetYFunction
@@ -64,6 +66,8 @@ export class OffsetYProvider extends Component<
   OffsetYProviderProps,
   OffsetYProviderState
 > {
+  _setOffsetY: SetOffsetYFunction;
+  _invoke: InvokeResultType;
   constructor(props: any) {
     super(props);
     this._setOffsetY = (offsetY: number) => this.setState({ offsetY });
@@ -84,8 +88,11 @@ export class OffsetYProvider extends Component<
     };
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.createInvokeFunction !== prevProps.createInvokeFunction) {
+  componentDidUpdate(prevProps: OffsetYProviderProps) {
+    if (
+      this.props.createInvokeFunction !== prevProps.createInvokeFunction &&
+      this.props.createInvokeFunction
+    ) {
       this._invoke = this.props.createInvokeFunction(this._setOffsetY);
     }
   }

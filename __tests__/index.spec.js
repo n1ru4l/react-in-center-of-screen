@@ -285,8 +285,10 @@ test("it can handle createInvokeFunction cleanup", async done => {
 
   // eslint-disable-next-line no-console
   const consoleError = console.error;
-  // eslint-disable-next-line no-console
+  /* eslint-disable no-console */
+  // $FlowFixMe
   console.error = done.fail;
+  /* eslint-enable no-console */
 
   _setOffsetY(150);
   getByText("ayyy");
@@ -296,6 +298,9 @@ test("it can handle createInvokeFunction cleanup", async done => {
   clock.tick(200);
 
   clock.uninstall();
+  /* eslint-disable no-console */
+  // $FlowFixMe
   console.error = consoleError;
+  /* eslint-enable no-console */
   done();
 });
