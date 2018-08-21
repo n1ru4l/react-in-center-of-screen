@@ -291,7 +291,7 @@
     "@babel/helper-remap-async-to-generator" "7.0.0-rc.1"
     "@babel/plugin-syntax-async-generators" "7.0.0-rc.1"
 
-"@babel/plugin-proposal-class-properties@^7.0.0-rc.1":
+"@babel/plugin-proposal-class-properties@7.0.0-rc.1":
   version "7.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-rc.1.tgz#88b3d3b257b9ed53fae50b13103e4c3c725e704e"
   dependencies:
