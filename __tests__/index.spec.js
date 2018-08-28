@@ -158,16 +158,16 @@ test("it supports the contentOffset option", async done => {
   // we have a header with a height of 100
   const { unmount, getByText } = render(
     <OffsetYProvider
-      centerYStart={100}
-      centerYEnd={200}
+      centerYStart={5}
+      centerYEnd={10}
       columnsPerRow={1}
-      listItemHeight={100}
-      contentOffset={100}
+      listItemHeight={5}
+      contentOffset={5}
     >
       {({ setOffsetY }) => {
         _setOffsetY = setOffsetY;
         return (
-          <IndexProvider index={3}>
+          <IndexProvider index={1}>
             {() => (
               <InCenterConsumer>
                 {({ isInCenter }) =>
@@ -184,9 +184,9 @@ test("it supports the contentOffset option", async done => {
   //$FlowFixMe
   _setOffsetY = (_setOffsetY: (value: number) => void);
 
-  _setOffsetY(100);
   getByText("ayyy");
-  _setOffsetY(200);
+  _setOffsetY(5);
+  getByText("is in center");
 
   unmount();
   done();
