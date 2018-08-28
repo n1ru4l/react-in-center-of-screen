@@ -175,12 +175,13 @@ export class InCenterConsumer extends Component<ConsumerProps> {
                 centerYStart,
                 centerYEnd,
                 listItemLowerBound,
-                listItemUpperBound
+                listItemUpperBound,
+                contentOffset
               } = value;
-
               let isInCenter = false;
+
               const muliplier = Math.floor(index / columnsPerRow);
-              const offsetTop = listItemHeight * muliplier;
+              const offsetTop = listItemHeight * muliplier + contentOffset;
               const positionRelativeToViewport = offsetTop - offsetY;
 
               const itemLowerY =
