@@ -2,6 +2,10 @@
 
 TBA
 
+# 1.0.0-alpha.4
+
+- fix `contentOffset` option ([`2611a28811496796205813fd5a4149c3375ebaba`](https://github.com/n1ru4l/react-in-center-of-screen/commit/2611a28811496796205813fd5a4149c3375ebaba))
+
 # 1.0.0-alpha.3
 
 - (chore) update development dependencies
