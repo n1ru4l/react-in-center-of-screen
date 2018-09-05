@@ -3650,9 +3650,9 @@ log-update@^1.0.2:
     ansi-escapes "^1.0.0"
     cli-cursor "^1.0.2"
 
-lolex@2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lolex/-/lolex-2.7.3.tgz#5d342280543993aca4be31df9e462963a178e45b"
+lolex@2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/lolex/-/lolex-2.7.4.tgz#6514de2c3291e9d6f09d49ddce4a95f7d4d5a93f"
 
 longest@^1.0.1:
   version "1.0.1"
