@@ -22,8 +22,8 @@
     "prettier-fix": "prettier --ignore-path .gitignore --write '**/*.{js,md,json}'"
   },
   "devDependencies": {
-    "@babel/cli": "7.1.0",
-    "@babel/core": "7.1.0",
+    "@babel/cli": "7.1.1",
+    "@babel/core": "7.1.1",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-transform-flow-comments": "7.0.0",
     "@babel/plugin-transform-flow-strip-types": "7.0.0",
