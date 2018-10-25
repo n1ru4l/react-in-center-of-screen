@@ -1800,9 +1800,9 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-dom-testing-library@^3.9.0:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.11.1.tgz#a2a1b0fe04700f585da9f3539ca626ab17ccf050"
+dom-testing-library@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.12.0.tgz#45c33124fe6a347410117802a367d3291514fe6f"
   dependencies:
     "@sheerun/mutationobserver-shim" "^0.3.2"
     pretty-format "^23.6.0"
@@ -4502,11 +4502,11 @@ react-dom@16.6.0:
     prop-types "^15.6.2"
     scheduler "^0.10.0"
 
-react-testing-library@5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.2.1.tgz#31f163e900457e5c0dcff7669ae06b502f8a9a7a"
+react-testing-library@5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.2.3.tgz#c3be44bfa5eb1ba2acc1fb218785c40ebbdfe8ed"
   dependencies:
-    dom-testing-library "^3.9.0"
+    dom-testing-library "^3.12.0"
 
 react@16.6.0:
   version "16.6.0"
