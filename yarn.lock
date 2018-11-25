@@ -1989,9 +1989,9 @@ eslint-plugin-flowtype@3.2.0:
   dependencies:
     lodash "^4.17.10"
 
-eslint-plugin-jest@22.0.0:
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.0.0.tgz#87dc52bbdd47f37f23bf2b10bb8469458bb3ed68"
+eslint-plugin-jest@22.0.1:
+  version "22.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.0.1.tgz#796af66d2f86a1cb4193d4baefca9d2479c06e6c"
 
 eslint-plugin-react@7.11.1:
   version "7.11.1"
