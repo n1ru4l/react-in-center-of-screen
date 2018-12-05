@@ -9,6 +9,8 @@
 
 Utility Components for determining whether elements are in the center of the screen.
 
+**Codesandbox Quick Demo:** https://codesandbox.io/s/1vw1q2288q
+
 Designed for `react-native`, but also compatible to browser environments.
 
 **Features**
