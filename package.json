@@ -48,7 +48,7 @@
     "prettier-check": "2.0.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
-    "react-testing-library": "5.6.1",
+    "react-testing-library": "5.7.0",
     "rimraf": "2.6.3",
     "rollup": "0.68.2",
     "rollup-plugin-babel": "4.3.2"
