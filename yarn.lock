@@ -898,9 +898,28 @@
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
 
+"@types/json-schema@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
+
 "@types/node@*":
   version "10.0.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.8.tgz#37b4d91d4e958e4c2ba0be2b86e7ed4ff19b0858"
+
+"@typescript-eslint/experimental-utils@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-1.13.0.tgz#b08c60d780c0067de2fb44b04b432f540138301e"
+  dependencies:
+    "@types/json-schema" "^7.0.3"
+    "@typescript-eslint/typescript-estree" "1.13.0"
+    eslint-scope "^4.0.0"
+
+"@typescript-eslint/typescript-estree@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-1.13.0.tgz#8140f17d0f60c03619798f1d628b8434913dc32e"
+  dependencies:
+    lodash.unescape "4.0.1"
+    semver "5.5.0"
 
 abab@^1.0.4:
   version "1.0.4"
@@ -2088,9 +2107,11 @@ eslint-plugin-flowtype@3.12.1:
   dependencies:
     lodash "^4.17.11"
 
-eslint-plugin-jest@22.13.0:
-  version "22.13.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.13.0.tgz#d7d134c6e3c2f67cc50f5fa89a329db579d28428"
+eslint-plugin-jest@22.13.4:
+  version "22.13.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.13.4.tgz#114ed3e6864a170e72d271865bd87c55a4686a7f"
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^1.13.0"
 
 eslint-plugin-react@7.14.2:
   version "7.14.2"
@@ -2113,7 +2134,7 @@ eslint-scope@3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-scope@^4.0.3:
+eslint-scope@^4.0.0, eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
   dependencies:
@@ -3992,6 +4013,10 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
+lodash.unescape@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
+
 lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.4:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
@@ -5346,7 +5371,7 @@ semver-compare@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
 
-"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@5.5.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
