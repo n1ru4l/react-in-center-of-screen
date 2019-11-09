@@ -44,7 +44,7 @@
     "lint-staged": "8.2.1",
     "lodash.debounce": "4.0.8",
     "lolex": "4.2.0",
-    "prettier": "1.18.2",
+    "prettier": "1.19.0",
     "prettier-check": "2.0.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
