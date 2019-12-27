@@ -2147,9 +2147,9 @@ escodegen@^1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@6.8.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.8.0.tgz#36bd7559dcef9f97d7596779b38e6a879abb89d3"
+eslint-config-prettier@6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.9.0.tgz#430d24822e82f7deb1e22a435bfa3999fae4ad64"
   dependencies:
     get-stdin "^6.0.0"
 
