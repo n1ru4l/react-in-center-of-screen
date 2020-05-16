@@ -38,7 +38,7 @@
     "eslint-plugin-flowtype": "3.13.0",
     "eslint-plugin-jest": "22.21.0",
     "eslint-plugin-react": "7.20.0",
-    "flow-bin": "0.124.0",
+    "flow-bin": "0.125.1",
     "flow-typed": "2.6.2",
     "jest": "23.6.0",
     "lint-staged": "8.2.1",
