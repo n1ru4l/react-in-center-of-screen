@@ -22,12 +22,12 @@
     "prettier-fix": "prettier --ignore-path .gitignore --write '**/*.{js,md,json}'"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.16",
-    "@babel/core": "7.12.16",
+    "@babel/cli": "7.12.17",
+    "@babel/core": "7.12.17",
     "@babel/plugin-proposal-class-properties": "7.12.13",
     "@babel/plugin-transform-flow-comments": "7.12.13",
     "@babel/plugin-transform-flow-strip-types": "7.12.13",
-    "@babel/preset-env": "7.12.16",
+    "@babel/preset-env": "7.12.17",
     "@babel/preset-react": "7.12.13",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
