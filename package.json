@@ -41,7 +41,7 @@
     "flow-bin": "0.133.0",
     "flow-typed": "2.6.2",
     "jest": "23.6.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "11.2.3",
     "lodash.debounce": "4.0.8",
     "lolex": "4.2.0",
     "prettier": "1.19.1",
